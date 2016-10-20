@@ -1,0 +1,52 @@
+﻿@{
+   
+}
+
+<!DOCTYPE html>
+
+<html>
+<head>
+    <style type="text/css"> 
+        .center {margin:auto;}
+        main {
+            position:relative; text-align:center; margin:0 auto;
+        }
+ 
+    </style>
+    <meta name="viewport" content="width=device-width;text/html; charset=utf-8" http-equiv="Content-Type" />
+    <title></title>
+</head>
+<body>
+    <table border="2" class="center">
+        @{
+            var lstStudent = Model as List<NancyC.Student>;
+
+            foreach (var item in lstStudent)
+            {
+                <tr>
+                    <td style="width: 50px">@item.ID</td>
+                    <td style="width: 50px">@item.Name</td>
+                    <td style="width: 50px"><a href="/Home/modify/@item.ID">修改</a></td>
+                    <td style="width: 50px"><a href="/@item.ID">删除</a></td>
+                </tr>
+            }
+        }
+    </table>  
+    <div class="main">
+        <div >
+             <p>添加成员</p>
+            <form action="/Home/Add" method="post">
+                <p>姓名: <input type="text" name="Name" style="width: 50px" /></p>
+                <p><input type="submit" value="提交" /></p>
+            </form>
+        </div>
+        <div >
+            <p>查询成员</p>
+            <form action="/Home/Search" method="post">
+                <p>姓名: <input type="text" name="Search" style="width: 50px" /></p>
+                <p><input type="submit" value="查询" /></p>
+            </form>
+        </div>
+    </div>
+</body>
+</html>

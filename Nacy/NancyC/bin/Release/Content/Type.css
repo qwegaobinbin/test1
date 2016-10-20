@@ -1,0 +1,26 @@
+﻿
+    body 
+    {
+        background-color: #f8f8f8;
+    }
+    .tablecenter
+    {
+        margin:auto;border: 2px solid black;
+    }
+    .center 
+    {
+        margin:auto;
+    }
+    .width
+    {
+        width:50px;
+    }
+    .centerLine 
+    {
+        text-align:center;
+    }
+
+    table tr td:hover
+    {
+        background: red;
+    }

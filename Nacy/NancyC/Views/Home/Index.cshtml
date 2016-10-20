@@ -1,0 +1,44 @@
+﻿<!DOCTYPE html>
+<html>
+<head>
+    <link href="~/content/type.css" rel="stylesheet" />
+    <meta name="viewport" content="width=device-width;text/html; charset=utf-8" http-equiv="Content-Type" />
+    <title></title>
+</head>
+<body>
+        @{
+            List<NancyDemo.Student> lstStudent = Model as List<NancyDemo.Student>;
+            if (lstStudent.Count!=0)
+            {
+                <table class="tablecenter">
+                    @foreach (var item in lstStudent)
+                    {
+                        <tr>
+                            <td class="width">@item.ID</td>
+                            <td class="width">@item.Name</td>
+                            <td class="width"><a href="/Home/modify/@item.ID">修改</a></td>
+                            <td class="width"><a href="/@item.ID">删除</a></td>
+                        </tr>
+                    }
+                </table>
+             }
+        }
+
+    <div class="centerLine">
+        <p class="centerLine">添加成员</p>
+        <form action="/Home/Add" method="post">
+            姓名: <input type="text" name="Name" class="width" />
+            <input type="submit" value="提交" /><br /><br />
+        </form>
+    </div>
+
+    <div class="centerLine">
+        <p class="centerLine">查询成员</p>
+        <form action="/Home/Search" method="post">
+            姓名: <input type="text" name="Search" class="width" />
+            <input type="submit" value="查询" /><br /><br />
+        </form>
+    </div>
+
+</body>
+</html>

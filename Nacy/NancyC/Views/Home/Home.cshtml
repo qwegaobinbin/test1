@@ -1,0 +1,24 @@
+﻿<!DOCTYPE html>
+<html>
+<head>
+
+    <link href="~/content/type.css" rel="stylesheet" />
+    <meta name="viewport" content="width=device-width;text/html; charset=utf-8" http-equiv="Content-Type" />
+    <title></title>
+</head>
+<body>
+    @{
+        var student = Model as NancyDemo.Student;
+    }
+
+    <div class="centerLine">
+        <p class="centerLine">请修改</p>
+        <form action="/Home/modify" method="post">
+            姓名: <input type="text" name="Name" class="width" />
+            <input type="hidden" name="hidden" class="width" value="@student.ID" />
+            <input type="submit" value="修改" />
+        </form>
+    </div>
+
+</body>
+</html>
